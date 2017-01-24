@@ -1,10 +1,11 @@
 const ctrlAuth = require('../services/authentication-service');
 
 module.exports = function (app) {
-    app.get('/authenticated', isAuthenticated)
+    app.get('/authenticated', isAuthenticated);
     app.post('/register', ctrlAuth.register);
     app.post('/login', ctrlAuth.login);
     app.get('/logout', logout);
+    app.get('/getUserProfile', ctrlAuth.getUserProfile);
 };
 
 function isAuthenticated(req, res) {

@@ -60,3 +60,15 @@ module.exports.login = function (req, res) {
 		}
 	})(req, res);
 };
+
+module.exports.getUserProfile = function(req, res){
+	User.find({_id: req.session._id}, function(err, result){
+		if(err){
+			sendJSONresponse(res, 404, err);
+			return;
+		}
+		if(result){
+			res.send({public:result});
+		}
+	})
+}
