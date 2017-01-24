@@ -1,13 +1,8 @@
 Profile
 
 <form name = "myForm" ng-controller = "checkboxCtrl">
-    <label>Value1:
-        <input type = "checkbox" ng-model = "checkboxModel.value1">
+    <label>Public:
+        <input type = "checkbox" ng-model = "checkboxModel.public">
     </label><br/>
-    <label>Value2:
-        <input type = "checkbox" ng-model="checkboxModel.value2"
-                ng-true-value = "'YES'" ng-false-value = "'NO'">
-    </label><br/>
-    <tt>value1 = {{checkboxModel.value1}}</tt><br/>
-    <tt>value2 = {{checkboxModel.value2}}</tt><br/>
+    <tt>public = {{checkboxModel.public}}</tt><br/>
 </form>
