@@ -5,7 +5,8 @@ angular.module('app', [
     'ui.router',
     'ngAnimate',
     'thatisuday.ng-image-gallery',
-    'ngFileUpload'
+    'ngFileUpload',
+    'app.checkbox'
 ])
 
 .run(['$rootScope', '$state', '$stateParams', 'AuthService',
