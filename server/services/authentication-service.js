@@ -86,7 +86,7 @@ module.exports.updateProfile = function(req, res){
             return handleError(err)
         }
         res.status(200).json({
-            public: response
+            public: req.body.public
         })
     })
 	
