@@ -71,7 +71,7 @@ module.exports.getUserProfile = function(req, res){
 			//res.send({public:result});
 			console.log("server ansver" + result);
 			console.log(result[0].public);
-			res.json(result); // for the debug only
+			res.send({public: result[0].public}); // for the debug only
 		}
 	})
 }
