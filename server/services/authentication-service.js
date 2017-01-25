@@ -62,7 +62,7 @@ module.exports.login = function (req, res) {
 };
 
 module.exports.getUserProfile = function(req, res){
-	User.find({_id: req.session._id}, function(err, result){
+	User.findOne({_id: req.session._id}, function(err, result){
 		if(err){
 			sendJSONresponse(res, 404, err);
 			return;
@@ -70,14 +70,14 @@ module.exports.getUserProfile = function(req, res){
 		if(result){
 			//res.send({public:result});
 			console.log("server ansver" + result);
-			console.log(result[0].public);
-			res.send({public: result[0].public}); // for the debug only
+			console.log(result.public);
+			res.send({public: result.public}); // for the debug only
 		}
 	})
 }
 
 module.exports.updateProfile = function(req, res){
-	User.find({_id: req.session._id}, function(err, result){
+	User.findOne({_id: req.session._id}, function(err, result){
 		if(err){
 			sendJSONresponse(res, 404, err);
 			return;
@@ -85,8 +85,8 @@ module.exports.updateProfile = function(req, res){
 		if(result){
 			//res.send({public:result});
 			console.log("server ansver" + result);
-			console.log(result[0].public);
-			res.send({public: !result[0].public}); // for the debug only
+			console.log(result.public);
+			res.send({public: result.public}); // for the debug only
 		}
 	})
 }
