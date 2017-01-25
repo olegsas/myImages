@@ -62,16 +62,15 @@ module.exports.login = function (req, res) {
 };
 
 module.exports.getUserProfile = function(req, res){
-	res.send({public: false}); // for the debug only
-	// User.find({_id: req.session._id}, function(err, result){
-	// 	if(err){
-	// 		sendJSONresponse(res, 404, err);
-	// 		return;
-	// 	}
-	// 	if(result){
-	// 		//res.send({public:result});
-	// 		console.log("server ansver");
-	// 		res.send({public: false}); // for the debug only
-	// 	}
-	// })
+	User.find({_id: req.session._id}, function(err, result){
+		if(err){
+			sendJSONresponse(res, 404, err);
+			return;
+		}
+		if(result){
+			//res.send({public:result});
+			console.log("server ansver");
+			res.send({public: result}); // for the debug only
+		}
+	})
 }
