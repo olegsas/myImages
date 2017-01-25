@@ -68,7 +68,8 @@ module.exports.getUserProfile = function(req, res){
 			return;
 		}
 		if(result){
-			res.send({public:result});
+			//res.send({public:result});
+			res.send({public: true}); // for the debug only
 		}
 	})
 }
