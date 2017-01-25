@@ -8,11 +8,11 @@ angular.module('app.checkbox', [])
 
         $scope.update = function() {
         console.log('====');
-        //  console.log('$scope.profile = ' + $scope.profile);
+         console.log('$scope.public = ' + $scope.public);
          $http.post('/updateProfile', {public:$scope.public})
          .then(public => {
-            //  console.log('+++');
-             console.log("public.data.public = "+public.data.public);
+            console.log('+++');
+            console.log("public.data.public = "+public.data.public);
              $scope.public = public.data.public;
          })          
          
