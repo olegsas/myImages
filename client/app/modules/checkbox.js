@@ -5,4 +5,17 @@ angular.module('app.checkbox', [])
             console.log("public.data  =  " + public.data.public);
             $scope.public = public.data.public;
         });
+
+        $scope.update = function() {
+        console.log('====');
+        //  console.log('$scope.profile = ' + $scope.profile);
+         $http.post('/updateProfile', {public:$scope.public})
+         .then(public => {
+            //  console.log('+++');
+             console.log("public.data.public = "+public.data.public);
+             $scope.public = public.data.public;
+         })          
+         
+     };
+
     }]);

@@ -2,7 +2,7 @@ Profile
 
 <form name = "myForm" ng-controller = "checkboxCtrl">
     <label>Public:
-        <input type = "checkbox" ng-model = "public">
+        <input type = "checkbox" ng-model = "public" ng-change = "update()">
     </label><br/>
     <tt>public = {{public}}</tt><br/>
 </form>

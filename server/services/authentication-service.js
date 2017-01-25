@@ -75,3 +75,18 @@ module.exports.getUserProfile = function(req, res){
 		}
 	})
 }
+
+module.exports.updateProfile = function(req, res){
+	User.find({_id: req.session._id}, function(err, result){
+		if(err){
+			sendJSONresponse(res, 404, err);
+			return;
+		}
+		if(result){
+			//res.send({public:result});
+			console.log("server ansver" + result);
+			console.log(result[0].public);
+			res.send({public: !result[0].public}); // for the debug only
+		}
+	})
+}

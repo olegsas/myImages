@@ -6,6 +6,7 @@ module.exports = function (app) {
     app.post('/login', ctrlAuth.login);
     app.get('/logout', logout);
     app.get('/getUserProfile', ctrlAuth.getUserProfile);
+    app.post('/updateProfile', ctrlAuth.updateProfile);
 };
 
 function isAuthenticated(req, res) {
