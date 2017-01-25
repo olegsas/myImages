@@ -69,8 +69,9 @@ module.exports.getUserProfile = function(req, res){
 		}
 		if(result){
 			//res.send({public:result});
-			console.log("server ansver");
-			res.send({public: result}); // for the debug only
+			console.log("server ansver" + result);
+			console.log(result[0].public);
+			res.json(result); // for the debug only
 		}
 	})
 }
