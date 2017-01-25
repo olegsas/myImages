@@ -91,65 +91,19 @@ module.exports.updateProfile = function(req, res){
     })
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	// User.update({
-    //     "_id": req.session._id
-    // }, {
-    //     "profileIsVisible": req.body.profile
-    // }, (err, response) => {
-    //     if (err) {
-    //         return handleError(err)
-    //     }
-    //     res.status(200).json({
-    //         message: response
-    //     })
-    // })
-	
-	
-	
-	
-	
-	
-	// var give;
-	// User.findOne({_id: req.session._id}, function(err, result){
-	// 	if(err){
-	// 		sendJSONresponse(res, 404, err);
-	// 		return;
-	// 	}
-	// 	if(result){
-	// 		//res.send({public:result});
-	// 		console.log("Update profile server ansver = " + result);
-	// 		console.log(result.public);
-	// 		give = !(result.public);
-	// 		console.log(give);
-	// 		if(give){
-	// 			console.log("we do it");
-	// 			User.update({_id: req.session._id}, {$set: {"public" : true}});
-	// 		}
-	// 		else{
-	// 			User.update({_id: req.session._id}, {$set: {"public" : false}});
-	// 		}
-	// 		res.send({public: give}); // for the debug only
-	// 	}
-	// })
 }
 
-// User.update({
-//         "_id": req.session._id
-//     }, {
-//         "profileIsVisible": req.body.profile
-//     }, (err, response) => {
-//         if (err) {
-//             return handleError(err)
-//         }
-//         res.status(200).json({
-//             message: response
-//         })
-//     })
+module.exports.getUserName = function(req, res){
+	User.findOne({_id: req.session._id}, function(err, result){
+		if(err){
+			sendJSONresponse(res, 404, err);
+			return;
+		}
+		if(result){
+			//res.send({public:result});
+			console.log("server ansver" + result);
+			console.log(result.local.name);
+			res.send({name: result.local.name});
+		}
+	})
+}

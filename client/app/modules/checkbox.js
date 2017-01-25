@@ -1,5 +1,12 @@
 angular.module('app.checkbox', [])
     .controller('checkboxCtrl', ['$scope', '$http', function($scope, $http) {
+        $http.get('/getUserName')
+        .then(name => {
+            //
+            console.log("name.data = " + name.data.name);
+            $scope.name = name.data.name;
+        });
+        
         $http.get('/getUserProfile')
         .then(public => {
             // console.log("public.data  =  " + public.data.public);

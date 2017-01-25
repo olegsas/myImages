@@ -1,8 +1,9 @@
-Profile
-
-<form name = "myForm" ng-controller = "checkboxCtrl">
+<div ng-controller = "checkboxCtrl">
+<h3>My name is {{name}}</h3>
+<form name = "myForm">
     <label>Public:
         <input type = "checkbox" ng-model = "public" ng-change = "update()">
     </label><br/>
     <tt>public = {{public}}</tt><br/>
 </form>
+</div>
