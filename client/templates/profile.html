@@ -1,14 +1,18 @@
 <div ng-controller = "checkboxCtrl">
-<h3>My name is {{name}}</h3>
-<form name = "myForm">
-    <label>Change the public/private profile. Public:
-        <input type = "checkbox" ng-model = "public" ng-change = "update()">
-    </label><br/>
-    <tt>public = {{public}}</tt><br/>
-</form>
-<h3>{{images.length}} картинки</h3>
-<p ng-repeat = "image in images">
-<img ng-src = {{image.url}}>
-</p>
+    <h3>My name is {{name}}</h3>
+    <form name = "myForm">
+        <label>Change the public/private profile. Public:
+            <input type = "checkbox" ng-model = "public" ng-change = "update()">
+        </label><br/>
+        <tt>public = {{public}}</tt><br/>
+    </form>
+    <div class = container>
+        <div class = jumbotron>
+            <h3>{{images.length}} картинки</h3>
+            <p ng-repeat = "image in images">
+                <img ng-src = {{image.url}}>
+            </p>
+        </div>
+    </div>
 
 </div>
