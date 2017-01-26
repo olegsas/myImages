@@ -7,10 +7,8 @@
     <tt>public = {{public}}</tt><br/>
 </form>
 <h3>{{images.length}} картинки</h3>
-<img ng-src = {{images[0].url}}>
-<img ng-src = {{images[1].url}}>
-<img ng-src = {{images[2].url}}>
-<img ng-src = {{images[3].url}}>
-
+<p ng-repeat = "image in images">
+<img ng-src = {{image.url}}>
+</p>
 
 </div>

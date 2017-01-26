@@ -25,7 +25,7 @@ angular.module('app.checkbox', ['ngFileUpload'])
         $http.get('/getUserName')
         .then(name => {
             //
-            console.log("name.data = " + name.data.name);
+            // console.log("name.data = " + name.data.name);
             $scope.name = name.data.name;
         });
         
