@@ -1,5 +1,27 @@
-angular.module('app.checkbox', [])
-    .controller('checkboxCtrl', ['$scope', '$http', function($scope, $http) {
+angular.module('app.checkbox', ['ngFileUpload'])
+    .controller('checkboxCtrl', ['$scope', '$http', function($scope, $http, Upload) {
+        $scope.methods = {};
+    $scope.images = [];
+
+    $scope.$watch('file', function () {
+        if ($scope.file != null) {
+            Upload.upload({ url: '/image', data: { image: $scope.file } })
+                .then(res => {
+                    if (res.status = 200)
+                        $scope.images.push({url: res.data})
+                });
+        }
+    });
+
+    $http.get('/images')
+        .then(images => {
+            images.data.forEach(img => {
+                $scope.images.push({url: img})
+            })
+        })
+        .catch(err => console.log(err))
+// I borrowed the code above the line from the controller home.js
+        
         $http.get('/getUserName')
         .then(name => {
             //
@@ -26,3 +48,5 @@ angular.module('app.checkbox', [])
      };
 
     }]);
+
+ 
