@@ -1,9 +1,25 @@
 <div ng-controller = "checkboxCtrl">
 <h3>My name is {{name}}</h3>
 <form name = "myForm">
-    <label>Public:
+    <label>Change the public/private profile. Public:
         <input type = "checkbox" ng-model = "public" ng-change = "update()">
     </label><br/>
     <tt>public = {{public}}</tt><br/>
 </form>
+<h2>{{images.length}} картинки</h2>
+
+<ng-image-gallery
+    ng-if="images.length > 0"
+    images="images"
+    thumbnails="true"
+    inline="true"
+    img-bubbles="true"
+    bg-close="true"
+    bubbles="true"
+    img-anim="slide"
+    conf="conf"
+    on-open="opened();"
+    on-close="closed();"
+></ng-image-gallery>
+
 </div>
