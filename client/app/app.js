@@ -6,7 +6,9 @@ angular.module('app', [
     'ngAnimate',
     'thatisuday.ng-image-gallery',
     'ngFileUpload',
-    'app.checkbox'
+    'app.checkbox',
+    'app.example'//,
+    // 'bootstrapLightbox'
 ])
 
 .run(['$rootScope', '$state', '$stateParams', 'AuthService',
