@@ -7,7 +7,7 @@ angular.module('app', [
     'thatisuday.ng-image-gallery',
     'ngFileUpload',
     'app.checkbox',
-    'app.example'//,
+    // 'app.example'//,
     // 'bootstrapLightbox'
 ])
 
